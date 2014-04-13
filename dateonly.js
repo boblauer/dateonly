@@ -51,6 +51,10 @@
   };
 
   DateOnly.prototype.valueOf = function() {
+    if (isNaN(this.year) || isNaN(this.month) || isNaN(this.date)) {
+      return NaN;
+    }
+
     return parseInt(pad(this.year, 4) + pad(this.month, 2) + pad(this.date, 2), 10);
   };
 
@@ -74,16 +78,14 @@
   function numberToDate(n) {
     var s = n.toString();
 
-    if (s.length !== 8 && s.length !== 13) throw new Error('Unable to cast ' + n + ' to a DateOnly');
-
-    if (s.length === 13) {
-      return new Date(n);
-    } else {
+    if (s.length === 8) {
       var year = s.slice(0, 4);
       var month = s.slice(4, 6);
       var day = s.slice(6, 8);
 
       return partsToDate(year, month, day);
+    } else {
+      return new Date(n);
     }
   }
 
@@ -95,6 +97,10 @@
     date.setHours(0, 0, 0, 0);
 
     return date;
+  }
+
+  function isNaN(v) {
+    return v !== v;
   }
 
   return DateOnly;
