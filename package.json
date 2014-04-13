@@ -1,0 +1,14 @@
+{
+  "name": "DateOnly",
+  "version": "0.0.1",
+  "description": "A JavaScript class that stores a date without a time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "keywords": [
+    "Date"
+  ],
+  "author": "Bob Lauer (rlauer@gmail.com)",
+  "license": "Apache v2"
+}
