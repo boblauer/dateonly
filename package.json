@@ -2,13 +2,19 @@
   "name": "DateOnly",
   "version": "0.0.1",
   "description": "A JavaScript class that stores a date without a time.",
-  "main": "index.js",
-  "scripts": {
-    "test": "grunt"
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-mocha": "~0.4.10",
+    "load-grunt-tasks": "~0.3.0"
   },
+  "scripts": {
+    "test": "grunt mocha"
+  },
+  "main": "dateonly.js",
   "keywords": [
     "Date"
   ],
-  "author": "Bob Lauer (rlauer@gmail.com)",
+  "author": "Bob Lauer <rlauer@gmail.com>",
   "license": "Apache v2"
 }
