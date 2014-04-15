@@ -46,6 +46,10 @@
     this.year = year;
   };
 
+  DateOnly.prototype.getDay = function() {
+    return this.toDate().getDay();
+  };
+
   DateOnly.prototype.toDate = function() {
     return partsToDate(this.year, this.month, this.date);
   };

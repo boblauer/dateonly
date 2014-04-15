@@ -39,4 +39,17 @@ describe('DateOnly', function() {
     assert.equal(dateOnly.toString(), 'Invalid Date');
   });
 
+  it('should implement get/set functions the same as the Date object', function() {
+    var dateOnly = new DateOnly('1/1/2000');
+
+    dateOnly.setDate(12);
+    dateOnly.setMonth(5);
+    dateOnly.setFullYear(2020);
+
+    assert.equal(dateOnly.getDate(), 12);
+    assert.equal(dateOnly.getMonth(), 5);
+    assert.equal(dateOnly.getFullYear(), 2020);
+    assert.equal(dateOnly.getDay(), 5);
+    assert.equal(dateOnly.valueOf(), 20200512);
+  });
 });
