@@ -3,13 +3,9 @@
   "version": "0.0.2",
   "description": "A JavaScript class that stores a date without a time.",
   "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-mocha": "~0.4.10",
-    "load-grunt-tasks": "~0.3.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "grunt mocha"
+    "test": "mocha test"
   },
   "main": "dateonly.js",
   "keywords": [

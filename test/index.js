@@ -1,6 +1,16 @@
-var assert = chai.assert;
+var assert   = require('assert')
+  , DateOnly = require('../')
+  ;
 
 describe('DateOnly', function() {
+
+  it('should accept a DateOnly as a parameter', function() {
+    var dateOnly = new DateOnly(20000001);
+    dateOnly = new DateOnly(dateOnly);
+    assert.equal(dateOnly.year, 2000);
+    assert.equal(dateOnly.month, 0);
+    assert.equal(dateOnly.date, 1);
+  });
 
   it('should accept a string as a parameter', function() {
     var dateOnly = new DateOnly('1/1/2000');
@@ -28,6 +38,10 @@ describe('DateOnly', function() {
     assert.equal(dateOnly.year, 2000);
     assert.equal(dateOnly.month, 0);
     assert.equal(dateOnly.date, 1);
+  });
+
+  it('should accept an empty parameter', function() {
+    assert.ok(new DateOnly());
   });
 
   it('should be an Invalidate DateOnly when a bad parameter is passed in', function() {

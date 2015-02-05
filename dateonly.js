@@ -10,7 +10,7 @@
 
     if (date instanceof String || typeof date === 'string') date = new Date(date);
     if (date instanceof Number || typeof date === 'number') date = numberToDate(date);
-
+    if (date && date.constructor && date.constructor.name === 'DateOnly') date = date.toDate();
     if (date instanceof Date) val = date;
 
     this.saveDateOnly(val || new Date());
