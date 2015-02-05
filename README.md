@@ -33,7 +33,6 @@ var DateOnly = window.DateOnly;
 
 ```javascript
 var DateOnly = require('dateonly');
-
 var myBirthday = new DateOnly('7/4/1980');
 ```
 ## API ##
