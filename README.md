@@ -163,6 +163,7 @@ __Example:__
 ```javascript
 var dateOnly = new DateOnly('7/15/2000');
 dateOnly.valueOf() // 20000615
+dateOnly.toJSON()  // 20000615
 ```
 
 ---
