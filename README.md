@@ -11,7 +11,7 @@ A simple example is a person's birthday - a birthday is not a single moment in t
 ##Installation
 
 ```javascript
-npm install mockdate
+npm install dateonly
 ```
 
 ##Usage
