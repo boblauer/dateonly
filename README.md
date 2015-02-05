@@ -6,7 +6,7 @@
 
 `DateOnly` is a data type that will only store a date, without an associated time. This allows you to work with dates without having to worry about time zones shifting the date.
 
-A simple example is a person's birthday - my birthday is not a single moment in time, but rather a full day.  `DateOnly` is the perfect data type to represent such data.
+A simple example is a person's birthday - a birthday is not a single moment in time, but rather a full day.  `DateOnly` is the perfect data type to represent such data.
 
 ##Installation
 
