@@ -66,4 +66,9 @@ describe('DateOnly', function() {
     assert.equal(dateOnly.getDay(), 5);
     assert.equal(dateOnly.valueOf(), 20200512);
   });
+
+  it('should implement a static toDate method', function() {
+    var date = 20120215;
+    assert.equal(DateOnly.toDate(date).valueOf(), new Date('03/15/2012').valueOf());
+  });
 });

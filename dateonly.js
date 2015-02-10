@@ -16,6 +16,10 @@
     this.saveDateOnly(val || new Date());
   }
 
+  DateOnly.toDate = function(dateOnlyStamp) {
+    return new DateOnly(dateOnlyStamp).toDate();
+  };
+
   DateOnly.prototype.saveDateOnly = function(date) {
     this.date = date.getDate();
     this.month = date.getMonth();
