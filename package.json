@@ -1,6 +1,6 @@
 {
   "name": "dateonly",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A JavaScript class that stores a date without a time.",
   "dependencies": {},
   "devDependencies": {},
