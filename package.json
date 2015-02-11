@@ -8,8 +8,13 @@
     "test": "mocha test"
   },
   "main": "dateonly.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boblauer/dateonly.git"
+  },
   "keywords": [
-    "Date"
+    "Date",
+    "TimeZone"
   ],
   "author": "Bob Lauer <rlauer@gmail.com>",
   "license": "Apache v2"
