@@ -3,7 +3,9 @@
   "version": "1.0.3",
   "description": "A JavaScript class that stores a date without a time.",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "moment-timezone": "^0.3.0"
+  },
   "scripts": {
     "test": "mocha test"
   },

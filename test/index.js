@@ -1,4 +1,5 @@
 var assert   = require('assert')
+  , moment   = require('moment-timezone')
   , DateOnly = require('../')
   ;
 
@@ -38,6 +39,29 @@ describe('DateOnly', function() {
     assert.equal(dateOnly.year, 2000);
     assert.equal(dateOnly.month, 0);
     assert.equal(dateOnly.date, 1);
+  });
+
+  it('should accept a moment as a parameter', function() {
+    var dateOnly = new DateOnly(moment(new Date('1/1/2000')));
+    assert.equal(dateOnly.year, 2000);
+    assert.equal(dateOnly.month, 0);
+    assert.equal(dateOnly.date, 1);
+  });
+
+  it('should respect a moment\'s time zone', function() {
+    var eastCoastMoment = moment(new Date('1/1/2000')).tz('America/New_York');
+    var westCoastMoment = moment(new Date('1/1/2000')).tz('America/Los_Angeles');
+
+    var eastCoastDateOnly = new DateOnly(eastCoastMoment);
+    var westCoastDateOnly = new DateOnly(westCoastMoment);
+
+    assert.equal(eastCoastDateOnly.year, 2000);
+    assert.equal(eastCoastDateOnly.month, 0);
+    assert.equal(eastCoastDateOnly.date, 1);
+
+    assert.equal(westCoastDateOnly.year, 1999);
+    assert.equal(westCoastDateOnly.month, 11);
+    assert.equal(westCoastDateOnly.date, 31);
   });
 
   it('should accept an empty parameter', function() {

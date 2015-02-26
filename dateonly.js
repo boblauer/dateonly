@@ -11,6 +11,7 @@
     if (date instanceof String || typeof date === 'string') date = new Date(date);
     if (date instanceof Number || typeof date === 'number') date = numberToDate(date);
     if (date && date.constructor && date.constructor.name === 'DateOnly') date = date.toDate();
+    if (date && date.constructor && date.constructor.name === 'Moment') date = momentToDate(date);
     if (date instanceof Date) val = date;
 
     this.saveDateOnly(val || new Date());
@@ -95,6 +96,12 @@
     } else {
       return new Date(n);
     }
+  }
+
+  function momentToDate(m) {
+    var dateStamp = +m.format('YYYYMMDD');
+    dateStamp -= 100; // moment's months start at 1, but DateOnly start at 0, so subtract 1 month.
+    return numberToDate(dateStamp);
   }
 
   function partsToDate(year, month, day) {
