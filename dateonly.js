@@ -105,10 +105,7 @@
   }
 
   function partsToDate(year, month, day) {
-    var date = new Date();
-    date.setYear(year);
-    date.setMonth(month);
-    date.setDate(day);
+    var date = new Date(year, month, day);
     date.setHours(0, 0, 0, 0);
 
     return date;
