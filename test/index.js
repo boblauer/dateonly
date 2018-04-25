@@ -95,4 +95,10 @@ describe('DateOnly', function() {
     var date = 20120215;
     assert.equal(DateOnly.toDate(date).valueOf(), new Date('03/15/2012').valueOf());
   });
+
+  it('should implement the toISOString function the same as the Date object', function() {
+    var dateOnly = new DateOnly(20180325);
+
+    assert.equal(dateOnly.toISOString(), '2018-04-25');
+  });
 });

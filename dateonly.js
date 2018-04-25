@@ -71,6 +71,10 @@
     return this.toDate().toDateString();
   };
 
+  DateOnly.prototype.toISOString = function() {
+    return pad(this.year, 4) + '-' + pad(this.month + 1, 2) + '-' + pad(this.date, 2);
+  }
+
   DateOnly.prototype.toJSON = function() {
     return this.valueOf();
   };
